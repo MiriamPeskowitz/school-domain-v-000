@@ -1,16 +1,8 @@
 class School
-  attr_accessor :student, :roster, :grade
+  attr_accessor :student_name, :roster
 
-  # roster =>{
-  #   9: [students],
-  #   10: [students],
-  #   11: [students],
-  #   12: [students]
-
-
-
-  def initialize(student)
-    @student = student
+  def initialize(name) # name of school
+    @name = name
     @roster = {}
   end
 
@@ -25,9 +17,10 @@ class School
 
   def sort
     sorted = {}
-    roster.each do |grade, students|
-      sorted[grade] = students.sort
+    roster.each do |grade, student_name|
+      sorted[grade] = student_name.sort
     end
     sorted
   end
+
 end
